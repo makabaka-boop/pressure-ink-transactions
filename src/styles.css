@@ -1,0 +1,119 @@
+:root {
+  font-family: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #1b1b1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f3f3f6;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e2e8;
+  flex-wrap: wrap;
+}
+
+.tb-btn {
+  border: 1px solid #d4d4dc;
+  background: #fafafc;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tb-btn:hover {
+  background: #eef1ff;
+}
+
+.tb-btn.active {
+  border-color: #4a6cf7;
+  background: #e8edff;
+  color: #2547c9;
+}
+
+.tb-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.tb-check {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sep {
+  width: 1px;
+  height: 20px;
+  background: #dcdce3;
+  margin: 0 4px;
+}
+
+.count {
+  margin-left: auto;
+  font-size: 12px;
+  color: #666;
+  font-variant-numeric: tabular-nums;
+}
+
+.canvas-wrap {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* 交给 Pointer Events 自己处理，禁止浏览器的触摸手势干扰书写/平移 */
+  touch-action: none;
+}
+
+.layer.overlay {
+  background: transparent;
+}
+
+.hint-inner {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  font-size: 12px;
+  color: #8a8a96;
+  pointer-events: none;
+}
+
+.toast {
+  position: fixed;
+  top: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(40, 40, 48, 0.92);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  z-index: 10;
+}
